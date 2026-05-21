@@ -1,0 +1,58 @@
+.app-shell {
+  max-width: 1100px;
+}
+
+.app-title {
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  margin-bottom: 0.5rem;
+}
+
+.subtitle {
+  color: #4b5d67;
+  max-width: 50rem;
+}
+
+.nav-pills .nav-link {
+  color: #12343b;
+  background-color: #d5ebe0;
+  border: 1px solid #b8d9ca;
+  border-radius: 999px;
+  padding: 0.4rem 0.9rem;
+  font-weight: 600;
+}
+
+.nav-pills .nav-link.active {
+  color: #fff;
+  background-color: #12343b;
+  border-color: #12343b;
+}
+
+.content-panel {
+  border: 0;
+  border-radius: 1rem;
+}
+
+.page-section {
+  text-align: left;
+}
+
+.section-title {
+  margin-bottom: 1rem;
+}
+
+.lead {
+  max-width: 40rem;
+}
+
+.api-base {
+  margin-top: 1rem;
+}
+
+.api-base span {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  background: #edf4ee;
+  padding: 0.2rem 0.45rem;
+  border-radius: 0.4rem;
+}
