@@ -1,8 +1,14 @@
 import { useEffect, useState } from "react";
 import { normalizeCollectionResponse } from "../lib/api";
 
-const leaderboardEndpoint = import.meta.env.VITE_CODESPACE_NAME
-  ? `https://${import.meta.env.VITE_CODESPACE_NAME}-8000.app.github.dev/api/leaderboard`
+const inferredCodespaceName =
+  typeof window !== "undefined"
+    ? (window.location.hostname.match(/^(.*)-\d+\.app\.github\.dev$/)?.[1] ?? "")
+    : "";
+const codespaceName = import.meta.env.VITE_CODESPACE_NAME || inferredCodespaceName;
+
+const leaderboardEndpoint = codespaceName
+  ? `https://${codespaceName}-8000.app.github.dev/api/leaderboard`
   : "http://localhost:8000/api/leaderboard";
 
 function Leaderboard() {

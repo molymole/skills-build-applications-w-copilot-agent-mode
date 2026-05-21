@@ -1,8 +1,14 @@
 import { useEffect, useState } from "react";
 import { normalizeCollectionResponse } from "../lib/api";
 
-const usersEndpoint = import.meta.env.VITE_CODESPACE_NAME
-  ? `https://${import.meta.env.VITE_CODESPACE_NAME}-8000.app.github.dev/api/users`
+const inferredCodespaceName =
+  typeof window !== "undefined"
+    ? (window.location.hostname.match(/^(.*)-\d+\.app\.github\.dev$/)?.[1] ?? "")
+    : "";
+const codespaceName = import.meta.env.VITE_CODESPACE_NAME || inferredCodespaceName;
+
+const usersEndpoint = codespaceName
+  ? `https://${codespaceName}-8000.app.github.dev/api/users`
   : "http://localhost:8000/api/users";
 
 function Users() {
